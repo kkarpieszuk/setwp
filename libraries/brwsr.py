@@ -13,8 +13,9 @@ def firstwizard(b, name):
         b.find_by_css('a.button-large').click()
         b.find_by_css('#weblog_title').fill( name )
         b.find_by_css('#user_login').fill( config.wpuser )
+        b.find_by_css('.wp-generate-pw').click()
         b.find_by_css('#pass1').fill( config.wppass )
-        b.find_by_css('#pass2').fill( config.wppass )
+        b.check('pw_weak')
         b.find_by_css('#admin_email').fill(  config.wpmail )
         b.find_by_css('input.button-large').click()
 
