@@ -7,7 +7,8 @@ otgs = {'git': {
             'wpmltm': 'git@git.onthegosystems.com:wpml/wpml-translation-management.git',
             'wpmlmedia': 'git@git.onthegosystems.com:wpml/wpml-media-translation.git',
             'wpmlctt': 'git@git.onthegosystems.com:compatibility/wpml-compatibility-test-tools.git',
-            'wcml': 'git@git.onthegosystems.com:wcml/woocommerce-multilingual.git'
+            'wcml': 'git@git.onthegosystems.com:wcml/woocommerce-multilingual.git',
+            'mail': 'git@git.onthegosystems.com:wpml/wpml-mail.git'
             }}
 
 external_plugins = {'svn': {
