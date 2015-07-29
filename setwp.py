@@ -49,7 +49,7 @@ def main(argv):
 
     # go back to name dir and change chmod
     os.chdir('../..')
-    # os.system('chmod -R 777 .')
+    os.system('chmod 777 .')
 
     browser.runbrowser(name)
 
