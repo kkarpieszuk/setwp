@@ -53,6 +53,10 @@ def main(argv):
 
     browser.runbrowser(name)
 
+    print "=================="
+    print "Here is your site:"
+    print config.serverurl + name
+
 
 if __name__ == "__main__":
     main(sys.argv[1:])
