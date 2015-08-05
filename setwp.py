@@ -55,7 +55,7 @@ def main(argv):
 
     print "=================="
     print "Here is your site:"
-    print config.serverurl + name
+    print config.serverurl + name + '/wp-admin'
 
 
 if __name__ == "__main__":
