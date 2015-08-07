@@ -41,10 +41,10 @@ def main(argv):
     os.system('rm -rf hello.php')
 
     #download plugins
-    for plugin, url in urls.otgs['git'].iteritems():
+    for plugin, url in urls.plugins['git'].iteritems():
         os.system('git clone ' + url)
 
-    for plugin, url in urls.external_plugins['svn'].iteritems():
+    for plugin, url in urls.plugins['svn'].iteritems():
         os.system('svn co ' + url + ' ' + plugin )
 
     # go back to name dir and change chmod

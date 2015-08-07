@@ -1,7 +1,7 @@
 wordpress = {'svn': 'http://develop.svn.wordpress.org/trunk/src/',
             'wpconfig': 'http://develop.svn.wordpress.org/trunk/wp-config-sample.php'}
 
-otgs = {'git': {
+plugins = {'git': {
             'wpml': 'git@git.onthegosystems.com:wpml/sitepress-multilingual-cms.git',
             'wpmlst': 'git@git.onthegosystems.com:wpml/wpml-string-translation.git',
             'wpmltm': 'git@git.onthegosystems.com:wpml/wpml-translation-management.git',
@@ -9,8 +9,7 @@ otgs = {'git': {
             'wpmlctt': 'git@git.onthegosystems.com:compatibility/wpml-compatibility-test-tools.git',
             'wcml': 'git@git.onthegosystems.com:wcml/woocommerce-multilingual.git',
             'mail': 'git@git.onthegosystems.com:wpml/wpml-mail.git'
-            }}
-
-external_plugins = {'svn': {
+            },
+            'svn': {
             'woocommerce': 'http://plugins.svn.wordpress.org/woocommerce/trunk/'
             }}
