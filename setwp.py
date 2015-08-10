@@ -10,20 +10,30 @@ def main(argv):
     thisdir = os.getcwd()
 
     try:
-        opts, args = getopt.getopt(argv, "n:", ["name="])
+        opts, args = getopt.getopt(argv, "dn:", ["name=", "delete"])
     except getopt.GetoptError:
         print "error in getopt"
 
     name = config.name
+    delete = False
     for opt, arg in opts:
         if opt in ("-n", "--name"):
             name = arg
-
-    # create database
-    os.system("echo 'create database "+name+"' | mysql -u"+config.dbuser+" -p"+config.dbpass)
+        if opt in ("-d", "--delete"):
+            delete = True
 
     # go to server dir
     os.chdir(config.serverpath)
+
+    if (delete):
+        os.system("echo 'drop database "+name+"' | mysql -u"+config.dbuser+" -p"+config.dbpass)
+        os.system("rm -rf " + name)
+        print "Site '" + name + "' deleted"
+        return
+
+
+    # create database
+    os.system("echo 'create database "+name+"' | mysql -u"+config.dbuser+" -p"+config.dbpass)
 
     # download wordpress
     os.system('svn checkout '+ urls.wordpress['svn'] +' ' + name)

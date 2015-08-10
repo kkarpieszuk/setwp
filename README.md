@@ -10,7 +10,10 @@ all in about 2 minutes
 
 ## Usage
 `./setwp.py -n name`
-- `name` - desired name of wordpress installation (default to *wordpress*)
+- creates wordpress installation with desired `name` (default to *wordpress*)
+
+`./setwp.py -n name -d`
+- deletes already existing site (and database) with given `name`
 
 ## Installation
 - you need to have installed subversion and git (command line). You need to at least once clone WPML from OTG git repository (restricted access)
