@@ -16,3 +16,7 @@ wpuser = 'konrad'
 wppass = '1'
 # his email address is:
 wpmail = 'konrad.k@icanlocalize.com'
+
+#English will be default language of your site,
+# what are additional languages?
+languages = ['pl']
