@@ -21,7 +21,7 @@ def firstwizard(b, name):
 
 def activateplugins(b):
     b.visit( config.serverurl + name + 'wp-admin')
-    
+    // 
 
 def runbrowser(name):
     with Browser() as b:
