@@ -19,6 +19,10 @@ def firstwizard(b, name):
         b.find_by_css('#admin_email').fill(  config.wpmail )
         b.find_by_css('input.button-large').click()
 
+def activateplugins(b):
+    b.visit( config.serverurl + name + 'wp-admin')
+    
+
 def runbrowser(name):
     with Browser() as b:
         firstwizard(b, name)
