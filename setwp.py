@@ -51,8 +51,12 @@ def main(argv):
     os.system('rm -rf hello.php')
 
     #download plugins
-    for plugin, url in urls.plugins['git'].iteritems():
-        os.system('git clone ' + url)
+    for plugin, details in urls.plugins['git'].iteritems():
+        os.system('git clone ' + details['url'])
+        if (details['branch'] is not None):
+            os.chdir(plugin)
+            os.system('git checkout ' + details['branch'])
+            os.chdir(os.pardir)
 
     for plugin, url in urls.plugins['svn'].iteritems():
         os.system('svn co ' + url + ' ' + plugin )
