@@ -27,7 +27,7 @@ plugins = {'git': {
                 'branch': 'develop'
                 },
             'wpml-mail': {
-                'url': 'git@git.onthegosystems.com:wpml/wpml-mail.git',
+                'url': 'git@git.onthegosystems.com:wpml-feature-plugins/wpml-mail.git',
                 'branch': 'develop'
                 },
             },
