@@ -30,6 +30,10 @@ plugins = {'git': {
                 'url': 'git@git.onthegosystems.com:wpml-feature-plugins/wpml-mail.git',
                 'branch': 'develop'
                 },
+            'WordPress-Plugin-Git-Branches-Info': {
+                'url': 'https://github.com/kkarpieszuk/WordPress-Plugin-Git-Branches-Info.git',
+                'branch': 'master'
+                }
             },
             'svn': {
             'woocommerce': 'http://plugins.svn.wordpress.org/woocommerce/trunk/'
