@@ -33,10 +33,10 @@ def activateplugins(b, name):
         if (b.is_text_present('Welcome to WooCommerce', wait_time=2)):
             b.find_by_css('.woocommerce-message a.button-primary').click()
             b.find_by_css('.wc-setup-actions a.button-primary').click()
-            b.find_by_name('save_step').click()
-            b.find_by_name('save_step').click()
-            b.find_by_name('save_step').click()
-            b.find_by_name('save_step').click()
+            b.find_by_name('save_step').first.click()
+            b.find_by_name('save_step').first.click()
+            b.find_by_name('save_step').first.click()
+            b.find_by_name('save_step').first.click()
             b.find_by_css('.submit a.skip').click()
         b.visit( url )
         if (b.is_text_present('No thanks, I will configure myself', wait_time=2)):
