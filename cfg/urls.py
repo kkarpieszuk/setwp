@@ -4,19 +4,19 @@ wordpress = {'svn': 'http://develop.svn.wordpress.org/trunk/src/',
 plugins = {'git': {
             'sitepress-multilingual-cms': {
                 'url': 'git@git.onthegosystems.com:wpml/sitepress-multilingual-cms.git',
-                'branch': 'develop'
+                'branch': 'master'
                 },
             'wpml-string-translation': {
                 'url': 'git@git.onthegosystems.com:wpml/wpml-string-translation.git',
-                'branch': 'develop'
+                'branch': 'master'
                 },
             'wpml-translation-management': {
                 'url': 'git@git.onthegosystems.com:wpml/wpml-translation-management.git',
-                'branch': 'develop'
+                'branch': 'master'
                 },
             'wpml-media-translation': {
                 'url': 'git@git.onthegosystems.com:wpml/wpml-media-translation.git',
-                'branch': 'develop'
+                'branch': 'master'
                 },
             'wpml-compatibility-test-tools': {
                 'url': 'git@git.onthegosystems.com:compatibility/wpml-compatibility-test-tools.git',
@@ -24,7 +24,7 @@ plugins = {'git': {
                 },
             'woocommerce-multilingual': {
                 'url': 'git@git.onthegosystems.com:wcml/woocommerce-multilingual.git',
-                'branch': 'develop'
+                'branch': 'master'
                 },
             'wpml-mail': {
                 'url': 'git@git.onthegosystems.com:wpml-feature-plugins/wpml-mail.git',
