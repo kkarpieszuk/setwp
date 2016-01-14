@@ -53,9 +53,9 @@ def main(argv):
     #download plugins
     for plugin, details in urls.plugins['git'].iteritems():
         os.system('git clone ' + details['url'])
-        if (details['branch'] is not None):
+        if (details['composer'] == 1):
             os.chdir(plugin)
-            os.system('git checkout ' + details['branch'])
+            os.system('composer.phar install')
             os.chdir(os.pardir)
 
     for plugin, url in urls.plugins['svn'].iteritems():

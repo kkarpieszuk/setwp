@@ -5,10 +5,10 @@ dbpass = 'wpml'
 # name of your project. you can specify here or pass as argument -n [name]
 name = 'wordpress'
 # what is your root dir for server (where you want to have wordpress installed)?
-serverpath = '/home/konrad/public_html'
+serverpath = '/var/www/html'
 
 # what is base url to your server (without name)?
-serverurl = 'http://localhost/konrad/'
+serverurl = 'http://localhost/'
 
 # what is desired wordpress admin name?
 wpuser = 'konrad'

@@ -22,6 +22,7 @@ def activateplugins(b, name):
     url = config.serverurl + name + '/wp-admin'
     b.visit( url )
     b.find_by_css('#user_login').fill(config.wpuser)
+    time.sleep(2)
     b.find_by_css('#user_pass').fill(config.wppass)
     b.check('rememberme')
     b.find_by_css('#wp-submit').click()
@@ -30,15 +31,22 @@ def activateplugins(b, name):
         b.find_by_css('#cb-select-all-1').check()
         b.select('action', 'activate-selected')
         b.find_by_css('#doaction').click()
+        '''
         if (b.is_text_present('Welcome to WooCommerce', wait_time=2)):
             b.find_by_css('.woocommerce-message a.button-primary').first.click()
             b.find_by_css('.wc-setup-actions .button-primary').first.click()
+            time.sleep(1)
             b.find_by_name('save_step').first.click()
+            time.sleep(1)
             b.find_by_name('save_step').first.click()
+            time.sleep(1)
             b.find_by_name('save_step').first.click()
+            time.sleep(1)
             b.find_by_name('save_step').first.click()
+            time.sleep(1)
             b.find_by_css('.submit a.skip').click()
         b.visit( url )
+        '''
         if (b.is_text_present('No thanks, I will configure myself', wait_time=2)):
             b.find_by_text('No thanks, I will configure myself').click()
             b.find_by_name('save').click()
