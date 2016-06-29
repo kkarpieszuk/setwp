@@ -30,6 +30,7 @@ def activateplugins(b, name):
         b.visit( url + '/plugins.php')
         b.find_by_css('#cb-select-all-1').check()
         b.select('action', 'activate-selected')
+        time.sleep(1)
         b.find_by_css('#doaction').click()
         '''
         if (b.is_text_present('Welcome to WooCommerce', wait_time=2)):
@@ -47,13 +48,14 @@ def activateplugins(b, name):
             b.find_by_css('.submit a.skip').click()
         b.visit( url )
         '''
-        if (b.is_text_present('No thanks, I will configure myself', wait_time=2)):
+        if (b.is_text_present('No thanks, I will configure myself', wait_time=5)):
             b.find_by_text('No thanks, I will configure myself').click()
+            time.sleep(3)
             b.find_by_name('save').click()
             for lang in config.languages:
                 b.find_by_value(lang).check()
             b.find_by_value('Next').click()
-            time.sleep(3)
+            time.sleep(7)
             b.find_by_name('icl_lang_sel_footer').check()
             b.find_by_value('Next').click()
             time.sleep(3)
@@ -65,6 +67,7 @@ def activateplugins(b, name):
             time.sleep(3)
 
 def runbrowser(name):
-    with Browser() as b:
+    executable_path = {'executable_path':'chromedriver'}
+    with Browser('chrome', **executable_path) as b:
         firstwizard(b, name)
         activateplugins(b, name)

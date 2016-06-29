@@ -5,10 +5,25 @@ import config
 import libraries.brwsr as browser
 import cfg.urls as urls
 
+def install_wordpress(to_dir, name):
+    this_dir = os.path.dirname(os.path.realpath(__file__))
+
+    if os.path.isdir( this_dir + "/downloads/wordpress"  ) == False:
+        os.chdir(this_dir + "/downloads/")
+        os.system('svn checkout '+ urls.wordpress['svn'] +' wordpress')
+        os.chdir("wordpress")
+        os.system('wget ' + urls.wordpress['wpconfig'])
+        os.chdir("../..")
+    os.chdir(this_dir + "/downloads/wordpress")
+    os.system("svn up")
+    os.chdir("..")
+    os.system("cp -R wordpress" + " " + to_dir + "/" + name)
+
+
+
+
 
 def main(argv):
-    thisdir = os.getcwd()
-
     try:
         opts, args = getopt.getopt(argv, "dn:", ["name=", "delete"])
     except getopt.GetoptError:
@@ -21,6 +36,8 @@ def main(argv):
             name = arg
         if opt in ("-d", "--delete"):
             delete = True
+
+    name = name.replace("-", "")
 
     # go to server dir
     os.chdir(config.serverpath)
@@ -36,16 +53,12 @@ def main(argv):
     os.system("echo 'create database "+name+"' | mysql -u"+config.dbuser+" -p"+config.dbpass)
 
     # download wordpress
-    os.system('svn checkout '+ urls.wordpress['svn'] +' ' + name)
+    install_wordpress(config.serverpath, name)
 
-    # go into wordpress dir
-    os.chdir(name)
-
-    # download wpconfigsample
-    os.system('wget ' + urls.wordpress['wpconfig'])
+    
 
     # go to plugins dir
-    os.chdir('wp-content/plugins')
+    os.chdir(config.serverpath + "/" + name + '/wp-content/plugins')
 
     # remove hello dolly
     os.system('rm -rf hello.php')
@@ -60,7 +73,7 @@ def main(argv):
 
     for plugin, url in urls.plugins['svn'].iteritems():
         os.system('svn co ' + url + ' ' + plugin )
-
+    
     # go back to name dir and change chmod
     os.chdir('../..')
     os.system('chmod 777 .')

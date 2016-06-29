@@ -18,8 +18,8 @@ plugins = {'git': {
                 'url': 'git@git.onthegosystems.com:wpml/wpml-media-translation.git',
                 'composer': 1
                 },
-            'wpml-compatibility-test-tools': {
-                'url': 'git@git.onthegosystems.com:compatibility/wpml-compatibility-test-tools.git',
+            'multilingual-tools': {
+                'url': 'git@git.onthegosystems.com:compatibility/multilingual-tools.git',
                 'composer': 0
                 },
             'woocommerce-multilingual': {
@@ -34,3 +34,4 @@ plugins = {'git': {
             'svn': {
             'woocommerce': 'http://plugins.svn.wordpress.org/woocommerce/trunk/'
             }}
+
