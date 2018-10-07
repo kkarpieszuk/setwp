@@ -2,7 +2,7 @@
 
 import os
 
-git_plugins_dir = "~/.wpml_cache/downloads/plugins/git/"
+git_plugins_dir = "/home/konrad/.wpml_cache/downloads/plugins/git/"
 
 
 def update_plugins():

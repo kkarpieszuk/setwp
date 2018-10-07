@@ -6,7 +6,7 @@ import libraries.brwsr as browser
 import importlib
 import cfg.urls as urls
 
-wpml_cache_dir = "~/.wpml_cache"
+wpml_cache_dir = "/home/konrad/.wpml_cache"
 
 
 def install_wordpress(to_dir, name):
