@@ -6,19 +6,17 @@ import libraries.brwsr as browser
 import importlib
 import cfg.urls as urls
 
-scriptpath = os.path.dirname(os.path.realpath(__file__))
+wpml_cache_dir = "~/.wpml_cache"
 
 
 def install_wordpress(to_dir, name):
-    this_dir = scriptpath
-
-    if os.path.isdir(this_dir + "/downloads/wordpress"):
-        os.chdir(this_dir + "/downloads/")
+    if os.path.isdir(wpml_cache_dir + "/downloads/wordpress"):
+        os.chdir(wpml_cache_dir + "/downloads/")
         os.system('svn checkout ' + urls.wordpress['svn'] + ' wordpress')
         os.chdir("wordpress")
         os.system('wget ' + urls.wordpress['wpconfig'])
         os.chdir("../..")
-    os.chdir(this_dir + "/downloads/wordpress")
+    os.chdir(wpml_cache_dir + "/downloads/wordpress")
     os.system("svn up")
     os.chdir("..")
     os.system("cp -R wordpress" + " " + to_dir + "/" + name)
@@ -26,16 +24,14 @@ def install_wordpress(to_dir, name):
 
 def install_git_plugins(plugin, details, name):
     print "##### installing plugin " + plugin + " #######"
-    this_dir = scriptpath
-
-    if not os.path.isdir(this_dir + "/downloads/plugins/git/" + plugin):
-        os.chdir(this_dir + "/downloads/plugins/git/")
+    if not os.path.isdir(wpml_cache_dir + "/downloads/plugins/git/" + plugin):
+        os.chdir(wpml_cache_dir + "/downloads/plugins/git/")
         os.system('git clone ' + details['url'])
         if details['composer'] == 1:
-            os.chdir(this_dir + "/downloads/plugins/git/" + plugin)
+            os.chdir(wpml_cache_dir + "/downloads/plugins/git/" + plugin)
             os.system('composer.phar install --no-dev')
             os.chdir(os.pardir)
-    os.chdir(this_dir + "/downloads/plugins/git")
+    os.chdir(wpml_cache_dir + "/downloads/plugins/git")
     os.system("cp -R " + plugin + " " + config.serverpath + "/" + name + "/wp-content/plugins/" + plugin)
 
 
