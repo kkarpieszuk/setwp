@@ -11,14 +11,11 @@ wpml_cache_dir = "/home/konrad/.wpml_cache"
 
 def install_wordpress(to_dir, name):
     if os.path.isdir(wpml_cache_dir + "/downloads/wordpress"):
-        os.chdir(wpml_cache_dir + "/downloads/")
-        os.system('svn checkout ' + urls.wordpress['svn'] + ' wordpress')
-        os.chdir("wordpress")
-        os.system('wget ' + urls.wordpress['wpconfig'])
-        os.chdir("../..")
-    os.chdir(wpml_cache_dir + "/downloads/wordpress")
-    os.system("svn up")
-    os.chdir("..")
+        os.chdir(wpml_cache_dir + "/downloads/wordpress/")
+        os.system("git reset --hard")
+        os.system("git fetch --all")
+        os.system("git pull")
+    os.chdir(wpml_cache_dir + "/downloads")
     os.system("cp -R wordpress" + " " + to_dir + "/" + name)
 
 
