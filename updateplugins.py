@@ -17,7 +17,7 @@ def update_plugins():
         os.system("git reset --hard")
         os.system("git fetch --all")
         os.system("git pull")
-        os.system("composer.phar update")
+        os.system("composer update")
 
 
 if __name__ == "__main__":

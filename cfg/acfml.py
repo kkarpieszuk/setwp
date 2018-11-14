@@ -3,27 +3,27 @@ wordpress = {'svn': 'http://develop.svn.wordpress.org/trunk/src/',
 
 plugins = {'git': {
             'sitepress-multilingual-cms': {
-                'url': 'git@git.onthegosystems.com:wpml/sitepress-multilingual-cms.git',
+                'url': 'ssh://git@git.onthegosystems.com:10022/wpml/sitepress-multilingual-cms.git',
                 'composer': 1
                 },
             'wpml-string-translation': {
-                'url': 'git@git.onthegosystems.com:wpml/wpml-string-translation.git',
+                'url': 'ssh://git@git.onthegosystems.com:10022/wpml/wpml-string-translation.git',
                 'composer': 1
                 },
             'wpml-translation-management': {
-                'url': 'git@git.onthegosystems.com:wpml/wpml-translation-management.git',
+                'url': 'ssh://git@git.onthegosystems.com:10022/wpml/wpml-translation-management.git',
                 'composer': 1
                 },
             'wpml-media-translation': {
-                'url': 'git@git.onthegosystems.com:wpml/wpml-media-translation.git',
+                'url': 'ssh://git@git.onthegosystems.com:10022/wpml/wpml-media-translation.git',
                 'composer': 1
                 },
             'multilingual-tools': {
-                'url': 'git@git.onthegosystems.com:compatibility/multilingual-tools.git',
+                'url': 'ssh://git@git.onthegosystems.com:10022/compatibility/multilingual-tools.git',
                 'composer': 0
                 },
             'acfml': {
-                'url': 'git@git.onthegosystems.com:wpml-bridge-plugins/acfml.git',
+                'url': 'ssh://git@git.onthegosystems.com:10022/wpml-bridge-plugins/acfml.git',
                 'composer': 1
                 },
             'WordPress-Plugin-Git-Branches-Info': {
