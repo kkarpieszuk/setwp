@@ -1,9 +1,10 @@
 #!/usr/bin/python
 
 import sys, getopt, os
-import config
-import libraries.brwsr as browser
 import importlib
+
+import libraries.brwsr as browser
+import config
 import cfg.urls as urls
 
 wpml_cache_dir = "/home/konrad/.wpml_cache"
